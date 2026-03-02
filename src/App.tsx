@@ -81,6 +81,11 @@ function App() {
           <HoverCopyText originalText={"Логин"} copyText={"Bbv12345678"}/>
           <HoverCopyText originalText={"Пароль"} copyText={"12345678"}/>
         </Collapsible>
+        <Collapsible title={"Synology камеры"}>
+          <HoverCopyText originalText={"IP"} copyText={"10.128.4.235:5001"}/>
+          <HoverCopyText originalText={"Логин"} copyText={"vladislav.kaziuchuts"}/>
+          <HoverCopyText originalText={"Пароль"} copyText={"q|X8ECnuFYlluTk"}/>
+        </Collapsible>
         {copyInfo.map(({originalText, copyText}: CopyInfo, index: number) => (
             <HoverCopyText originalText={originalText} copyText={copyText} key={index}/>
         ))}
