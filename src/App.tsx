@@ -92,6 +92,7 @@ function App() {
         {copyInfo.map(({originalText, copyText}: CopyInfo, index: number) => (
             <HoverCopyText originalText={originalText} copyText={copyText} key={index}/>
         ))}
+        <HoverCopyText originalText={"LKassa"} copyText={"https://my.lkassa.by/auth/login"}/>
       </Container>
     </MainContainer>
 
