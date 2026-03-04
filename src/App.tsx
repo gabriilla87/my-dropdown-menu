@@ -117,7 +117,7 @@ function App() {
         {
             listItemTitle: "LKassa",
             content: "https://my.lkassa.by/auth/login",
-            type: "text",
+            type: "link",
         },
     ]
 
