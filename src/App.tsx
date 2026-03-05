@@ -1,6 +1,8 @@
 import Collapsible from "./Collapsible";
 import styled from "styled-components";
 import {CollapsibleItem} from "./CollapsibleItem.tsx";
+// import {Input} from "./Input.tsx";
+// import {useState} from "react";
 
 const Container = styled.div`
     display: flex;
@@ -54,13 +56,8 @@ function App() {
             listTitle: "АСБ ДБ",
             listItemsData: [
                 {
-                    listItemTitle: "Логин",
-                    content: "Bbv12345678",
-                    type: "text",
-                },
-                {
                     listItemTitle: "Пароль",
-                    content: "12345678",
+                    content: "Bbv12345678",
                     type: "text",
                 },
             ]
@@ -121,6 +118,8 @@ function App() {
         },
     ]
 
+    // const [textValue, setTextValue] = useState<string>("")
+
     return (
         <MainContainer>
             <Container>
@@ -135,6 +134,9 @@ function App() {
                         <CollapsibleItem originalText={listItemTitle} copyText={content} type={type} key={index}/>
                     ))
                 }
+                {/*<Input onChange={(e) => (setTextValue(e.currentTarget.value))}*/}
+                {/*       value={textValue}*/}
+                {/*/>*/}
             </Container>
         </MainContainer>
     )
