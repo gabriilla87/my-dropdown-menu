@@ -53,16 +53,6 @@ function App() {
             ]
         },
         {
-            listTitle: "АСБ ДБ",
-            listItemsData: [
-                {
-                    listItemTitle: "Пароль",
-                    content: "Bbv12345678",
-                    type: "text",
-                },
-            ]
-        },
-        {
             listTitle: "1c мои данные",
             listItemsData: [
                 {
@@ -188,19 +178,19 @@ function App() {
 
             ]
         },
-        {
-            listTitle: "Avest",
-            listItemsData: [
-                {
-                    listItemTitle: "Пароль",
-                    content: "12345678",
-                    type: "text",
-                },
-            ]
-        },
     ]
 
     const regularData: listItemData[] = [
+        {
+            listItemTitle: "АСБ ДБ Пароль",
+            content: "Bbv12345678",
+            type: "text",
+        },
+        {
+            listItemTitle: "Avest пароль",
+            content: "12345678",
+            type: "text",
+        },
         {
             listItemTitle: "Сервак с прогами",
             content: "\\\\10.129.1.110",
