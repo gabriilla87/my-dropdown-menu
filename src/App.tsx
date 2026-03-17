@@ -1,7 +1,9 @@
 import Collapsible from "./Collapsible";
 import styled from "styled-components";
 import {CollapsibleItem} from "./CollapsibleItem.tsx";
-// import {Input} from "./Input.tsx";
+import {AddCollapsibleForm} from "./AddCollapsibleForm.tsx";
+// import {useEffect, useState} from "react";
+// import {AddCollapsibleForm} from "./AddCollapsibleForm.tsx";
 // import {useState} from "react";
 
 const Container = styled.div`
@@ -68,7 +70,7 @@ function App() {
             ]
         },
         {
-            listTitle: "Почта",
+            listTitle: "Моя Почта",
             listItemsData: [
                 {
                     listItemTitle: "Сервер",
@@ -83,6 +85,31 @@ function App() {
                 {
                     listItemTitle: "Пароль",
                     content: "kzfm4j3ESg2CRA",
+                    type: "text",
+                },
+            ]
+        },
+        {
+            listTitle: "Подключение почты(imap)",
+            listItemsData: [
+                {
+                    listItemTitle: "Серверы(исх/вх)",
+                    content: "ms6.g-cloud.by",
+                    type: "text",
+                },
+                {
+                    listItemTitle: "Вх порт",
+                    content: "993",
+                    type: "text",
+                },
+                {
+                    listItemTitle: "Исх порт",
+                    content: "465",
+                    type: "text",
+                },
+                {
+                    listItemTitle: "Безопасный тип соединения",
+                    content: "SSL/TLS",
                     type: "text",
                 },
             ]
@@ -180,6 +207,18 @@ function App() {
         },
     ]
 
+    // const [collapsibleData, setCollapsibleData] = useState<CollapsibleData[] | null>(null);
+    //
+    // useEffect(() => {
+    //     fetch('https://nodejs-production-f13a.up.railway.app/lists')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             setCollapsibleData(data)
+    //             console.log("data fetched successfully")
+    //         })
+    //         .catch(error => console.error(error));
+    // }, []); // Пустой массив — запрос при монтировании
+
     const regularData: listItemData[] = [
         {
             listItemTitle: "АСБ ДБ Пароль",
@@ -213,28 +252,25 @@ function App() {
         },
     ]
 
-    // const [textValue, setTextValue] = useState<string>("")
 
-    return (
-        <MainContainer>
-            <Container>
-                <h2>Сервисы</h2>
-                {
-                    collapsibleData.map(({listItemsData, listTitle}: CollapsibleData, index) => (
-                        <Collapsible title={listTitle} listItemsData={listItemsData} key={index}/>
-                    ))
-                }
-                {
-                    regularData.map(({listItemTitle, content, type}: listItemData, index) => (
-                        <CollapsibleItem originalText={listItemTitle} copyText={content} type={type} key={index}/>
-                    ))
-                }
-                {/*<Input onChange={(e) => (setTextValue(e.currentTarget.value))}*/}
-                {/*       value={textValue}*/}
-                {/*/>*/}
-            </Container>
-        </MainContainer>
-    )
+    if (!collapsibleData) return <div>Загрузка...</div>;
+    return <MainContainer>
+        <Container>
+            <h2>Сервисы</h2>
+            {
+                collapsibleData.map(({listItemsData, listTitle}: CollapsibleData, index) => (
+                    <Collapsible title={listTitle} listItemsData={listItemsData} key={index}/>
+                ))
+            }
+            {
+                regularData.map(({listItemTitle, content, type}: listItemData, index) => (
+                    <CollapsibleItem originalText={listItemTitle} copyText={content} type={type} key={index}/>
+                ))
+            }
+            <AddCollapsibleForm/>
+        </Container>
+    </MainContainer>;
+
 }
 
 export default App;
