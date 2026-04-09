@@ -18,6 +18,7 @@ interface StoreData {
     regularData: ListItemData[];
     addCollapsibleDataItem: (title: string) => void;
     deleteCollapsibleDataItem: (id: string) => void;
+    addRegularDataItem: (title: string, value: string, type: "link" | "text") => void;
 }
 
 export const useStore = create<StoreData>((set) => ({
@@ -90,8 +91,13 @@ export const useStore = create<StoreData>((set) => ({
                     type: "text",
                 },
                 {
-                    listItemTitle: "Исх порт",
+                    listItemTitle: "Исх порт 1",
                     content: "465",
+                    type: "text",
+                },
+                {
+                    listItemTitle: "Исх порт 2",
+                    content: "587",
                     type: "text",
                 },
                 {
@@ -253,5 +259,6 @@ export const useStore = create<StoreData>((set) => ({
         },
     ],
     addCollapsibleDataItem: (title) => set((state) => ({collapsibleData: [...state.collapsibleData, { id: uuidv4(), listTitle: title, listItemsData: [] }]})),
-    deleteCollapsibleDataItem: (id) => set((state) => ({collapsibleData: state.collapsibleData.filter((item) => item.id != id)}))
+    deleteCollapsibleDataItem: (id) => set((state) => ({collapsibleData: state.collapsibleData.filter((item) => item.id != id)})),
+    addRegularDataItem: (title, value, type) => set((state) => ({regularData: [...state.regularData, { listItemTitle: title, content: value, type: type}]}))
 }))

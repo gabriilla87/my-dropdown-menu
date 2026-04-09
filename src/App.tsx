@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {CollapsibleItem} from "./CollapsibleItem.tsx";
 // import {AddCollapsibleForm} from "./AddCollapsibleForm.tsx";
 import {type CollapsibleData, type ListItemData, useStore} from "./store.ts";
-// import {AddItemForm} from "./AddItemForm.tsx";
+import {AddItemForm} from "./AddItemForm.tsx";
 
 const Container = styled.div`
     display: flex;
@@ -21,8 +21,8 @@ const MainContainer = styled.div`
     justify-content: center;
     height: 100vh;
     padding: 0;
-    margin: 0;
     box-sizing: border-box;
+    margin: 0 0 600px;
 `
 
 
@@ -47,7 +47,7 @@ function App() {
                 ))
             }
             {/*<AddCollapsibleForm/>*/}
-            {/*<AddItemForm/>*/}
+            <AddItemForm/>
         </Container>
     </MainContainer>;
 
