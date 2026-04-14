@@ -44,13 +44,29 @@ export const useStore = create<StoreData>((set) => ({
             listTitle: "id сервер Ассистента",
             listItemsData: [
                 {
-                    listItemTitle: "id.bbv.by",
+                    listItemTitle: "id",
                     content: "id.bbv.by",
                     type: "text",
                 },
                 {
-                    listItemTitle: "44334",
+                    listItemTitle: "порт",
                     content: "44334",
+                    type: "text",
+                }
+            ]
+        },
+        {
+            id: uuidv4(),
+            listTitle: "Логин и пароль Экзамен",
+            listItemsData: [
+                {
+                    listItemTitle: "логин",
+                    content: "belblank/bbv",
+                    type: "text",
+                },
+                {
+                    listItemTitle: "пароль",
+                    content: "bbv",
                     type: "text",
                 }
             ]
@@ -251,11 +267,6 @@ export const useStore = create<StoreData>((set) => ({
         {
             listItemTitle: "Avest пароль",
             content: "12345678",
-            type: "text",
-        },
-        {
-            listItemTitle: "Сервак с прогами",
-            content: "\\\\10.129.1.110",
             type: "text",
         },
         {
