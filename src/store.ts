@@ -295,6 +295,11 @@ export const useStore = create<StoreData>((set) => ({
             content: "https://my.lkassa.by/auth/login",
             type: "link",
         },
+        {
+            listItemTitle: "Bitrix сервер",
+            content: "belblank.bbv.by",
+            type: "text",
+        },
     ],
     addCollapsibleDataItem: (title) => set((state) => ({collapsibleData: [...state.collapsibleData, { id: uuidv4(), listTitle: title, listItemsData: [] }]})),
     deleteCollapsibleDataItem: (id) => set((state) => ({collapsibleData: state.collapsibleData.filter((item) => item.id != id)})),
