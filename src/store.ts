@@ -291,6 +291,11 @@ export const useStore = create<StoreData>((set) => ({
             type: "text",
         },
         {
+            listItemTitle: "Касперский пароль",
+            content: "Bbvbbvbbv1",
+            type: "text",
+        },
+        {
             listItemTitle: "LKassa",
             content: "https://my.lkassa.by/auth/login",
             type: "link",
