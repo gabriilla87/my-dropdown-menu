@@ -272,6 +272,22 @@ export const useStore = create<StoreData>((set) => ({
                     type: "text",
                 },
             ]
+        },
+        {
+            id: uuidv4(),
+            listTitle: "Kaspersky credentials",
+            listItemsData: [
+                {
+                    listItemTitle: "login",
+                    content: "asu",
+                    type: "text"
+                },
+                {
+                    listItemTitle: "password",
+                    content: "Bbv9090",
+                    type: "text"
+                }
+            ]
         }
     ],
     regularData: [
@@ -288,11 +304,6 @@ export const useStore = create<StoreData>((set) => ({
         {
             listItemTitle: "СППИ пароль",
             content: "Qq!12345",
-            type: "text",
-        },
-        {
-            listItemTitle: "Касперский пароль",
-            content: "Bbvbbvbbv1",
             type: "text",
         },
         {
